@@ -36,6 +36,9 @@ class ApplicationController < Sinatra::Base
     ##your code here
     binding.pry
     user = User.find_by(username: params[:username])
+    if user && user.authenticate(params[:password])
+      
+    end
   end
 
   get "/failure" do
