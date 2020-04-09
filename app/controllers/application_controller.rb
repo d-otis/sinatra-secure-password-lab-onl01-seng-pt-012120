@@ -39,6 +39,8 @@ class ApplicationController < Sinatra::Base
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       erb :account
+    else
+      
     end
   end
 
